@@ -1,0 +1,175 @@
+[
+  {
+    "id": 1,
+    "icon": "🎭",
+    "iconBg": "rgba(245,158,11,0.15)",
+    "title": "Emotion-Based Movie Recommender",
+    "description": "Real-time facial emotion detection pipeline that maps a user's detected mood to a curated movie recommendation, combining computer vision with a content-based filtering engine.",
+    "categories": ["ml", "nlp"],
+    "tags": [
+      { "label": "Python", "color": "violet" },
+      { "label": "OpenCV", "color": "cyan" },
+      { "label": "Scikit-learn", "color": "cyan" }
+    ],
+    "github": "https://github.com/Ruvinology/Emotion-based-movie-detector",
+    "demo": ""
+  },
+  {
+    "id": 2,
+    "icon": "🤖",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "title": "Customer Churn Predictor",
+    "description": "End-to-end churn prediction model built on telecom data. Engineered features, compared classifiers (Logistic Regression, Random Forest, XGBoost), and surfaced key churn drivers via SHAP explainability.",
+    "categories": ["ml"],
+    "tags": [
+      { "label": "Jupyter Notebook", "color": "cyan" },
+      { "label": "XGBoost", "color": "violet" },
+      { "label": "SHAP", "color": "amber" }
+    ],
+    "github": "https://github.com/Ruvinology/Customer_churn_predictor",
+    "demo": ""
+  },
+  {
+    "id": 3,
+    "icon": "💬",
+    "iconBg": "rgba(124,58,237,0.15)",
+    "title": "Support Bot",
+    "description": "NLP-powered support chatbot that parses user queries using intent classification and entity extraction, then routes them to the correct response to cut manual support overhead.",
+    "categories": ["nlp"],
+    "tags": [
+      { "label": "Python", "color": "violet" },
+      { "label": "NLP", "color": "cyan" },
+      { "label": "NLTK", "color": "amber" }
+    ],
+    "github": "https://github.com/Ruvinology/Support_Bot",
+    "demo": ""
+  },
+  {
+    "id": 4,
+    "icon": "⚠️",
+    "iconBg": "rgba(245,158,11,0.15)",
+    "title": "Risk Detector",
+    "description": "Binary classification system that ingests structured input data and predicts risk levels using a trained ML pipeline, with threshold tuning to balance precision and recall.",
+    "categories": ["ml"],
+    "tags": [
+      { "label": "Python", "color": "violet" },
+      { "label": "Scikit-learn", "color": "cyan" }
+    ],
+    "github": "https://github.com/Ruvinology/risk-detector",
+    "demo": ""
+  },
+  {
+    "id": 5,
+    "icon": "📈",
+    "iconBg": "rgba(124,58,237,0.15)",
+    "title": "Advanced Data Analytics",
+    "description": "Collection of analytics notebooks tackling real-world datasets, spanning regression modelling, time-series analysis, outlier detection, and insight-driven data storytelling.",
+    "categories": ["eda"],
+    "tags": [
+      { "label": "Python", "color": "violet" },
+      { "label": "Pandas", "color": "cyan" },
+      { "label": "Matplotlib", "color": "amber" }
+    ],
+    "github": "https://github.com/Ruvinology/Advanced-data-analytics",
+    "demo": ""
+  },
+  {
+    "id": 6,
+    "icon": "🗄️",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "title": "SQL Analytics",
+    "description": "Deep-dive SQL analytics project covering complex multi-table joins, window functions, CTEs, and query optimisation to turn raw relational data into actionable business intelligence.",
+    "categories": ["eda"],
+    "tags": [
+      { "label": "SQL", "color": "cyan" },
+      { "label": "Python", "color": "violet" }
+    ],
+    "github": "https://github.com/Ruvinology/SQL-analytics-",
+    "demo": ""
+  },
+  {
+    "id": 7,
+    "icon": "📊",
+    "iconBg": "rgba(124,58,237,0.15)",
+    "title": "Analytic Projects",
+    "description": "Domain-spanning analytics case studies where each notebook follows the full data workflow: acquire, clean, explore, model, and communicate findings with interactive visualisations.",
+    "categories": ["eda"],
+    "tags": [
+      { "label": "Jupyter Notebook", "color": "cyan" },
+      { "label": "Python", "color": "violet" },
+      { "label": "Seaborn", "color": "amber" }
+    ],
+    "github": "https://github.com/Ruvinology/Analytic-Projects",
+    "demo": ""
+  },
+  {
+    "id": 8,
+    "icon": "🐾",
+    "iconBg": "rgba(245,158,11,0.15)",
+    "title": "Project Fur Baby",
+    "description": "Data analysis and recommendation engine for pet owners that explores breed and lifestyle datasets to surface personalised care insights using clustering and collaborative filtering.",
+    "categories": ["ml", "eda"],
+    "tags": [
+      { "label": "Python", "color": "violet" },
+      { "label": "Pandas", "color": "cyan" },
+      { "label": "Scikit-learn", "color": "amber" }
+    ],
+    "github": "https://github.com/Ruvinology/project_fur_baby",
+    "demo": ""
+  },
+  {
+    "id": 9,
+    "icon": "🏨",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "title": "BookInn",
+    "description": "Full-stack hotel booking platform with an admin dashboard for managing rooms, guest reservations, and booking status. Deployed live on Vercel.",
+    "categories": ["viz"],
+    "tags": [
+      { "label": "HTML/CSS", "color": "cyan" },
+      { "label": "JavaScript", "color": "amber" }
+    ],
+    "github": "https://github.com/Ruvinology/BookInn",
+    "demo": "https://book-inn-two.vercel.app"
+  },
+  {
+    "id": 10,
+    "icon": "🎨",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "title": "Craftfolio",
+    "description": "Personal portfolio site built from scratch with responsive design, smooth animations, and clean component architecture. Deployed on Vercel.",
+    "categories": ["viz"],
+    "tags": [
+      { "label": "JavaScript", "color": "amber" },
+      { "label": "HTML/CSS", "color": "cyan" }
+    ],
+    "github": "https://github.com/Ruvinology/craftfolio",
+    "demo": "https://craftfolio-one.vercel.app"
+  },
+  {
+    "id": 11,
+    "icon": "🎓",
+    "iconBg": "rgba(245,158,11,0.15)",
+    "title": "Student Management System",
+    "description": "C# desktop application for managing student records, course enrolments, and grade tracking, backed by a structured relational database with full CRUD operations.",
+    "categories": ["eda"],
+    "tags": [
+      { "label": "C#", "color": "violet" },
+      { "label": ".NET", "color": "cyan" }
+    ],
+    "github": "https://github.com/Ruvinology/Student-Management-Systemtem",
+    "demo": ""
+  },
+  {
+    "id": 12,
+    "icon": "📋",
+    "iconBg": "rgba(124,58,237,0.15)",
+    "title": "Projectspace",
+    "description": "Lightweight project management workspace built with Python for organising tasks, tracking milestones, and keeping team workflows structured.",
+    "categories": ["eda"],
+    "tags": [
+      { "label": "Python", "color": "violet" }
+    ],
+    "github": "https://github.com/Ruvinology/Projectspace",
+    "demo": ""
+  }
+]

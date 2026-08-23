@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "icon": "🎓",
+    "name": "Certification Name Here",
+    "issuer": "e.g. Google / Coursera / Kaggle",
+    "date": "Month Year",
+    "url": "https://your-certificate-link.com"
+  },
+  {
+    "id": 2,
+    "icon": "📐",
+    "name": "Certification Name Here",
+    "issuer": "Issuer",
+    "date": "Month Year",
+    "url": "https://your-certificate-link.com"
+  },
+  {
+    "id": 3,
+    "icon": "🧪",
+    "name": "Certification Name Here",
+    "issuer": "Issuer",
+    "date": "Month Year",
+    "url": "https://your-certificate-link.com"
+  },
+  {
+    "id": 4,
+    "icon": "🤖",
+    "name": "Certification Name Here",
+    "issuer": "Issuer",
+    "date": "Month Year",
+    "url": "https://your-certificate-link.com"
+  },
+  {
+    "id": 5,
+    "icon": "📊",
+    "name": "Certification Name Here",
+    "issuer": "Issuer",
+    "date": "Month Year",
+    "url": "https://your-certificate-link.com"
+  },
+  {
+    "id": 6,
+    "icon": "🌐",
+    "name": "Certification Name Here",
+    "issuer": "Issuer",
+    "date": "Month Year",
+    "url": "https://your-certificate-link.com"
+  }
+]

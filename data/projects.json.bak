@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "icon": "📊",
+    "iconBg": "rgba(124,58,237,0.15)",
+    "title": "Project Title Here",
+    "description": "Brief description of this project. What was the problem? What approach did you take? What was the outcome or insight?",
+    "categories": ["eda"],
+    "tags": [
+      { "label": "Python", "color": "violet" },
+      { "label": "Pandas", "color": "cyan" },
+      { "label": "Matplotlib", "color": "amber" }
+    ],
+    "github": "https://github.com/Ruvinology/Emotion-based-movie-detector.git",
+    "demo": "https://your-demo-link.com"
+  },
+  {
+    "id": 2,
+    "icon": "🤖",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "title": "Project Title Here",
+    "description": "Brief description of this project. What was the problem? What approach did you take? What was the outcome or insight?",
+    "categories": ["ml"],
+    "tags": [
+      { "label": "Python", "color": "violet" },
+      { "label": "Scikit-learn", "color": "cyan" },
+      { "label": "Seaborn", "color": "amber" }
+    ],
+    "github": "https://github.com/Ruvinology/GoAnime.git",
+    "demo": "https://your-demo-link.com"
+  },
+  {
+    "id": 3,
+    "icon": "🧠",
+    "iconBg": "rgba(245,158,11,0.15)",
+    "title": "Project Title Here",
+    "description": "Brief description of this project. What was the problem? What approach did you take? What was the outcome or insight?",
+    "categories": ["nlp"],
+    "tags": [
+      { "label": "Python", "color": "violet" },
+      { "label": "TensorFlow", "color": "cyan" },
+      { "label": "NLP", "color": "violet" }
+    ],
+    "github": "https://github.com/Ruvinology/BookInn.git",
+    "demo": "https://your-demo-link.com"
+  },
+  {
+    "id": 4,
+    "icon": "📈",
+    "iconBg": "rgba(124,58,237,0.15)",
+    "title": "Project Title Here",
+    "description": "Brief description of this project. What was the problem? What approach did you take? What was the outcome or insight?",
+    "categories": ["viz"],
+    "tags": [
+      { "label": "SQL", "color": "violet" },
+      { "label": "Tableau", "color": "amber" },
+      { "label": "Pandas", "color": "cyan" }
+    ],
+    "github": "https://github.com/Ruvinology/solvemate-deployment.git",
+    "demo": "https://your-demo-link.com"
+  },
+  {
+    "id": 5,
+    "icon": "🔍",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "title": "Project Title Here",
+    "description": "Brief description of this project. What was the problem? What approach did you take? What was the outcome or insight?",
+    "categories": ["eda", "ml"],
+    "tags": [
+      { "label": "Python", "color": "violet" },
+      { "label": "NumPy", "color": "cyan" },
+      { "label": "Plotly", "color": "amber" }
+    ],
+    "github": "https://github.com/Ruvinology/risk-detector.git",
+    "demo": "https://your-demo-link.com"
+  },
+  {
+    "id": 6,
+    "icon": "🌐",
+    "iconBg": "rgba(245,158,11,0.15)",
+    "title": "Project Title Here",
+    "description": "Brief description of this project. What was the problem? What approach did you take? What was the outcome or insight?",
+    "categories": ["eda"],
+    "tags": [
+      { "label": "Python", "color": "violet" },
+      { "label": "Web Scraping", "color": "violet" },
+      { "label": "Pandas", "color": "cyan" }
+    ],
+    "github": "https://github.com/Ruvinology/Support_Bot.git",
+    "demo": "https://your-demo-link.com"
+  },
+  {
+    "id": 7,
+    "icon": "💬",
+    "iconBg": "rgba(124,58,237,0.15)",
+    "title": "Project Title Here",
+    "description": "Brief description of this project. What was the problem? What approach did you take? What was the outcome or insight?",
+    "categories": ["nlp", "ml"],
+    "tags": [
+      { "label": "Python", "color": "violet" },
+      { "label": "NLP", "color": "violet" },
+      { "label": "Scikit-learn", "color": "cyan" }
+    ],
+    "github": "https://github.com/yourusername/repo",
+    "demo": "https://your-demo-link.com"
+  },
+  {
+    "id": 8,
+    "icon": "🗺️",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "title": "Project Title Here",
+    "description": "Brief description of this project. What was the problem? What approach did you take? What was the outcome or insight?",
+    "categories": ["viz"],
+    "tags": [
+      { "label": "Python", "color": "violet" },
+      { "label": "Folium", "color": "amber" },
+      { "label": "Pandas", "color": "cyan" }
+    ],
+    "github": "https://github.com/yourusername/repo",
+    "demo": "https://your-demo-link.com"
+  },
+  {
+    "id": 9,
+    "icon": "⚡",
+    "iconBg": "rgba(245,158,11,0.15)",
+    "title": "Project Title Here",
+    "description": "Brief description of this project. What was the problem? What approach did you take? What was the outcome or insight?",
+    "categories": ["dl"],
+    "tags": [
+      { "label": "Python", "color": "violet" },
+      { "label": "PyTorch", "color": "cyan" },
+      { "label": "Deep Learning", "color": "violet" }
+    ],
+    "github": "https://github.com/yourusername/repo",
+    "demo": "https://your-demo-link.com"
+  },
+  {
+    "id": 10,
+    "icon": "🎯",
+    "iconBg": "rgba(124,58,237,0.15)",
+    "title": "Project Title Here",
+    "description": "Brief description of this project. What was the problem? What approach did you take? What was the outcome or insight?",
+    "categories": ["viz", "eda"],
+    "tags": [
+      { "label": "R", "color": "violet" },
+      { "label": "ggplot2", "color": "cyan" },
+      { "label": "Statistics", "color": "amber" }
+    ],
+    "github": "https://github.com/yourusername/repo",
+    "demo": "https://your-demo-link.com"
+  }
+]
