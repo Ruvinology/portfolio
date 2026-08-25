@@ -1,175 +1,145 @@
 [
   {
-    "id": 1,
-    "icon": "🎭",
-    "iconBg": "rgba(245,158,11,0.15)",
-    "title": "Emotion-Based Movie Recommender",
-    "description": "Real-time facial emotion detection pipeline that maps a user's detected mood to a curated movie recommendation, combining computer vision with a content-based filtering engine.",
-    "categories": ["ml", "nlp"],
-    "tags": [
-      { "label": "Python", "color": "violet" },
-      { "label": "OpenCV", "color": "cyan" },
-      { "label": "Scikit-learn", "color": "cyan" }
-    ],
-    "github": "https://github.com/Ruvinology/Emotion-based-movie-detector",
-    "demo": ""
-  },
-  {
-    "id": 2,
-    "icon": "🤖",
-    "iconBg": "rgba(6,182,212,0.15)",
-    "title": "Customer Churn Predictor",
-    "description": "End-to-end churn prediction model built on telecom data. Engineered features, compared classifiers (Logistic Regression, Random Forest, XGBoost), and surfaced key churn drivers via SHAP explainability.",
-    "categories": ["ml"],
-    "tags": [
-      { "label": "Jupyter Notebook", "color": "cyan" },
-      { "label": "XGBoost", "color": "violet" },
-      { "label": "SHAP", "color": "amber" }
-    ],
-    "github": "https://github.com/Ruvinology/Customer_churn_predictor",
-    "demo": ""
-  },
-  {
-    "id": 3,
-    "icon": "💬",
+    "id": 13,
+    "icon": "🧠",
     "iconBg": "rgba(124,58,237,0.15)",
-    "title": "Support Bot",
-    "description": "NLP-powered support chatbot that parses user queries using intent classification and entity extraction, then routes them to the correct response to cut manual support overhead.",
-    "categories": ["nlp"],
-    "tags": [
-      { "label": "Python", "color": "violet" },
-      { "label": "NLP", "color": "cyan" },
-      { "label": "NLTK", "color": "amber" }
-    ],
-    "github": "https://github.com/Ruvinology/Support_Bot",
-    "demo": ""
-  },
-  {
-    "id": 4,
-    "icon": "⚠️",
-    "iconBg": "rgba(245,158,11,0.15)",
-    "title": "Risk Detector",
-    "description": "Binary classification system that ingests structured input data and predicts risk levels using a trained ML pipeline, with threshold tuning to balance precision and recall.",
-    "categories": ["ml"],
-    "tags": [
-      { "label": "Python", "color": "violet" },
-      { "label": "Scikit-learn", "color": "cyan" }
-    ],
-    "github": "https://github.com/Ruvinology/risk-detector",
-    "demo": ""
-  },
-  {
-    "id": 5,
-    "icon": "📈",
-    "iconBg": "rgba(124,58,237,0.15)",
-    "title": "Advanced Data Analytics",
-    "description": "Collection of analytics notebooks tackling real-world datasets, spanning regression modelling, time-series analysis, outlier detection, and insight-driven data storytelling.",
-    "categories": ["eda"],
-    "tags": [
-      { "label": "Python", "color": "violet" },
-      { "label": "Pandas", "color": "cyan" },
-      { "label": "Matplotlib", "color": "amber" }
-    ],
-    "github": "https://github.com/Ruvinology/Advanced-data-analytics",
-    "demo": ""
-  },
-  {
-    "id": 6,
-    "icon": "🗄️",
-    "iconBg": "rgba(6,182,212,0.15)",
-    "title": "SQL Analytics",
-    "description": "Deep-dive SQL analytics project covering complex multi-table joins, window functions, CTEs, and query optimisation to turn raw relational data into actionable business intelligence.",
-    "categories": ["eda"],
-    "tags": [
-      { "label": "SQL", "color": "cyan" },
-      { "label": "Python", "color": "violet" }
-    ],
-    "github": "https://github.com/Ruvinology/SQL-analytics-",
-    "demo": ""
-  },
-  {
-    "id": 7,
-    "icon": "📊",
-    "iconBg": "rgba(124,58,237,0.15)",
-    "title": "Analytic Projects",
-    "description": "Domain-spanning analytics case studies where each notebook follows the full data workflow: acquire, clean, explore, model, and communicate findings with interactive visualisations.",
-    "categories": ["eda"],
-    "tags": [
-      { "label": "Jupyter Notebook", "color": "cyan" },
-      { "label": "Python", "color": "violet" },
-      { "label": "Seaborn", "color": "amber" }
-    ],
-    "github": "https://github.com/Ruvinology/Analytic-Projects",
-    "demo": ""
-  },
-  {
-    "id": 8,
-    "icon": "🐾",
-    "iconBg": "rgba(245,158,11,0.15)",
-    "title": "Project Fur Baby",
-    "description": "Data analysis and recommendation engine for pet owners that explores breed and lifestyle datasets to surface personalised care insights using clustering and collaborative filtering.",
-    "categories": ["ml", "eda"],
-    "tags": [
-      { "label": "Python", "color": "violet" },
-      { "label": "Pandas", "color": "cyan" },
-      { "label": "Scikit-learn", "color": "amber" }
-    ],
-    "github": "https://github.com/Ruvinology/project_fur_baby",
-    "demo": ""
-  },
-  {
-    "id": 9,
-    "icon": "🏨",
-    "iconBg": "rgba(6,182,212,0.15)",
-    "title": "BookInn",
-    "description": "Full-stack hotel booking platform with an admin dashboard for managing rooms, guest reservations, and booking status. Deployed live on Vercel.",
-    "categories": ["viz"],
-    "tags": [
-      { "label": "HTML/CSS", "color": "cyan" },
-      { "label": "JavaScript", "color": "amber" }
-    ],
-    "github": "https://github.com/Ruvinology/BookInn",
-    "demo": "https://book-inn-two.vercel.app"
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_11 PM (11).png",
+    "title": "SolveMate",
+    "description": "AI-powered full-stack study companion with a React/Vite frontend, Spring Boot REST API, and a Flask ML service backed by Google Gemini. Deployed on Railway with a MySQL database and a custom domain.",
+    "categories": ["ml", "viz"],
+    "github": "https://github.com/Ruvinology/solvemate-deployment",
+    "demo": "https://solvemate.xyz/user"
   },
   {
     "id": 10,
     "icon": "🎨",
     "iconBg": "rgba(6,182,212,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_09 PM (5).png",
     "title": "Craftfolio",
     "description": "Personal portfolio site built from scratch with responsive design, smooth animations, and clean component architecture. Deployed on Vercel.",
     "categories": ["viz"],
-    "tags": [
-      { "label": "JavaScript", "color": "amber" },
-      { "label": "HTML/CSS", "color": "cyan" }
-    ],
     "github": "https://github.com/Ruvinology/craftfolio",
     "demo": "https://craftfolio-one.vercel.app"
   },
   {
-    "id": 11,
-    "icon": "🎓",
+    "id": 4,
+    "icon": "🛡️",
     "iconBg": "rgba(245,158,11,0.15)",
-    "title": "Student Management System",
-    "description": "C# desktop application for managing student records, course enrolments, and grade tracking, backed by a structured relational database with full CRUD operations.",
-    "categories": ["eda"],
-    "tags": [
-      { "label": "C#", "color": "violet" },
-      { "label": ".NET", "color": "cyan" }
-    ],
-    "github": "https://github.com/Ruvinology/Student-Management-Systemtem",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_11 PM (10).png",
+    "title": "ScamShield",
+    "description": "Binary classification system that ingests structured input data and predicts risk levels using a trained ML pipeline, with threshold tuning to balance precision and recall.",
+    "categories": ["ml"],
+    "github": "https://github.com/Ruvinology/risk-detector",
+    "demo": "https://scamshieldclient.vercel.app/"
+  },
+  {
+    "id": 18,
+    "icon": "🎓",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_10 PM (8).png",
+    "title": "FMSC GPA Calculator",
+    "description": "A GPA calculator built specifically for FMSC students, supporting the faculty's grading scheme. Calculate semester and cumulative GPA instantly with a clean, easy-to-use interface.",
+    "categories": ["viz"],
+    "github": "https://github.com/Ruvinology/FMSC-gpa-calculator",
+    "demo": "https://fmsc-gpa-calculator.vercel.app/"
+  },
+  {
+    "id": 15,
+    "icon": "🎌",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_10 PM (7).png",
+    "title": "GoAnime",
+    "description": "Anime discovery web app powered by the AniList GraphQL API. Search by title, filter by genre and format, and explore detailed info including synopsis, ratings, episode count, and trailer links.",
+    "categories": ["viz"],
+    "github": "https://github.com/Ruvinology/GoAnime",
+    "demo": "https://goanime-discovery.vercel.app/"
+  },
+  {
+    "id": 1,
+    "icon": "🎭",
+    "iconBg": "rgba(245,158,11,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_08 PM (4).png",
+    "title": "CinePulse",
+    "description": "Real-time facial emotion detection pipeline that maps a user's detected mood to a curated movie recommendation, combining computer vision with a content-based filtering engine.",
+    "categories": ["ml", "nlp"],
+    "github": "https://github.com/Ruvinology/Emotion-based-movie-detector",
+    "demo": "https://emotion-based-movie-detector-l2dnpvrxuvm9wxcv4o9fqz.streamlit.app/"
+  },
+  {
+    "id": 9,
+    "icon": "🏨",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_13 PM (14).png",
+    "title": "BookInn",
+    "description": "Full-stack hotel booking platform with an admin dashboard for managing rooms, guest reservations, and booking status. Deployed live on Vercel.",
+    "categories": ["viz"],
+    "github": "https://github.com/Ruvinology/BookInn",
+    "demo": "https://book-inn-two.vercel.app"
+  },
+  {
+    "id": 2,
+    "icon": "🤖",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_08 PM (3).png",
+    "title": "Customer Churn Predictor",
+    "description": "End-to-end churn prediction model built on telecom data. Engineered features, compared classifiers (Logistic Regression, Random Forest, XGBoost), and surfaced key churn drivers via SHAP explainability.",
+    "categories": ["ml"],
+    "github": "https://github.com/Ruvinology/Customer_churn_predictor",
+    "demo": "https://customerchurnpredictor-dzfvdvygnkscn7qbmij3xa.streamlit.app/"
+  },
+  {
+    "id": 17,
+    "icon": "💳",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_09 PM (6).png",
+    "title": "Debit Card Online Issuer",
+    "description": "Group university project — a web-based debit card issuance platform built with a custom PHP MVC architecture. Handles card application workflows, user management, and database-driven record tracking.",
+    "categories": ["viz"],
+    "github": "https://github.com/Department-of-IT-FMSC-USJ/group-project-group-8",
+    "demo": "https://debitcardrenewal.infinityfree.me/"
+  },
+  {
+    "id": 3,
+    "icon": "💬",
+    "iconBg": "rgba(124,58,237,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_12 PM (13).png",
+    "title": "Hanako-san",
+    "description": "An emotion-aware support companion that parses user queries using intent classification and entity extraction, responding with empathy-driven replies tuned to the user's detected mood.",
+    "categories": ["nlp"],
+    "github": "https://github.com/Ruvinology/Support_Bot",
     "demo": ""
   },
   {
-    "id": 12,
-    "icon": "📋",
-    "iconBg": "rgba(124,58,237,0.15)",
-    "title": "Projectspace",
-    "description": "Lightweight project management workspace built with Python for organising tasks, tracking milestones, and keeping team workflows structured.",
-    "categories": ["eda"],
-    "tags": [
-      { "label": "Python", "color": "violet" }
-    ],
+    "id": 14,
+    "icon": "🦇",
+    "iconBg": "rgba(245,158,11,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_07 PM (2).png",
+    "title": "Brainiac Attack",
+    "description": "2D action game built in Python featuring DC Universe characters. Players battle through levels with custom sprite animations, sound effects, and collision logic built with Pygame.",
+    "categories": ["viz"],
+    "github": "https://github.com/Ruvinology/brainiac_attack",
+    "demo": "https://braniacattack.vercel.app/"
+  },
+  {
+    "id": 16,
+    "icon": "🤖",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_11 PM (9).png",
+    "title": "Robot Wars",
+    "description": "2D robot combat game built with Python and Pygame, featuring sprite-based characters, sound effects, and image assets. Players battle it out in an arena-style environment with custom game logic.",
+    "categories": ["viz"],
+    "github": "https://github.com/Ruvinology/porject_robot_wars",
+    "demo": "https://robot-wars-six.vercel.app/"
+  },
+  {
+    "id": 19,
+    "icon": "🚀",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_12 PM (12).png",
+    "title": "Space Wars",
+    "description": "A browser-based space shooter game where players pilot a spacecraft, dodge incoming fire, and battle enemy ships across progressively harder waves.",
+    "categories": ["viz"],
     "github": "https://github.com/Ruvinology/Projectspace",
-    "demo": ""
+    "demo": "https://space-wars-game.vercel.app/"
   }
 ]

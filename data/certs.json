@@ -2,49 +2,57 @@
   {
     "id": 1,
     "icon": "🎓",
-    "name": "Certification Name Here",
-    "issuer": "e.g. Google / Coursera / Kaggle",
-    "date": "Month Year",
-    "url": "https://your-certificate-link.com"
+    "name": "IBM Data Science Professional Certificate",
+    "issuer": "IBM / Coursera",
+    "date": "March 2026",
+    "url": "https://www.coursera.org/account/accomplishments/professional-cert/1U2VY56EAWY8"
   },
   {
     "id": 2,
-    "icon": "📐",
-    "name": "Certification Name Here",
-    "issuer": "Issuer",
-    "date": "Month Year",
-    "url": "https://your-certificate-link.com"
+    "icon": "🤖",
+    "name": "Google AI Essentials",
+    "issuer": "Google / Coursera",
+    "date": "January 2026",
+    "url": "https://coursera.org/verify/specialization/E55BHNW1H6RT"
   },
   {
     "id": 3,
-    "icon": "🧪",
-    "name": "Certification Name Here",
-    "issuer": "Issuer",
-    "date": "Month Year",
-    "url": "https://your-certificate-link.com"
+    "icon": "🧠",
+    "name": "Advanced Learning Algorithms",
+    "issuer": "DeepLearning.AI / Coursera",
+    "date": "June 2026",
+    "url": "https://coursera.org/verify/9UXHBBY4CRSD"
   },
   {
     "id": 4,
-    "icon": "🤖",
-    "name": "Certification Name Here",
-    "issuer": "Issuer",
-    "date": "Month Year",
-    "url": "https://your-certificate-link.com"
+    "icon": "📈",
+    "name": "Supervised Machine Learning: Regression and Classification",
+    "issuer": "DeepLearning.AI / Coursera",
+    "date": "June 2026",
+    "url": "https://coursera.org/verify/EGFS5BRJ201O"
   },
   {
     "id": 5,
-    "icon": "📊",
-    "name": "Certification Name Here",
-    "issuer": "Issuer",
-    "date": "Month Year",
-    "url": "https://your-certificate-link.com"
+    "icon": "🌐",
+    "name": "WordPress Website Development Course",
+    "issuer": "Coursera",
+    "date": "May 2026",
+    "url": "https://coursera.org/verify/DVWYQ40ZATVH"
   },
   {
     "id": 6,
-    "icon": "🌐",
-    "name": "Certification Name Here",
-    "issuer": "Issuer",
-    "date": "Month Year",
-    "url": "https://your-certificate-link.com"
+    "icon": "🐍",
+    "name": "Python For Data Science - Real Time Experience",
+    "issuer": "Udemy",
+    "date": "July 2025",
+    "url": "https://www.udemy.com/certificate/UC-7b94d0f0-4e53-4ceb-b9f1-58f27c5f5fda/"
+  },
+  {
+    "id": 7,
+    "icon": "🔐",
+    "name": "Cybersecurity Fundamentals",
+    "issuer": "APNIC Academy",
+    "date": "January 2026",
+    "url": ""
   }
 ]
