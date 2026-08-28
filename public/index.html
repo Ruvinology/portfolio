@@ -1017,7 +1017,7 @@
         display: flex; flex-direction: column;
         position: fixed; top: 0; right: 0; bottom: 0;
         width: min(75vw, 280px);
-        background: rgba(10,10,15,0.97); backdrop-filter: blur(16px);
+        background: #0a0f1a;
         border-left: 1px solid var(--border);
         padding: 5rem 2rem 2rem;
         gap: 1.5rem; z-index: 200;
@@ -1050,7 +1050,7 @@
   <noscript>
     <style>
       .reveal, .hero-content > *, .hero-photo { opacity: 1 !important; transform: none !important; animation: none !important; }
-      .cmdk-hint, .cmdk-edge { display: none; }   /* terminal needs JS */
+      .cmdk-hint { display: none; }   /* hide top terminal button on small screens */
     </style>
   </noscript>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
