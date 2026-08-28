@@ -1017,19 +1017,12 @@
         display: flex; flex-direction: column;
         position: fixed; top: 0; right: 0; bottom: 0;
         width: min(75vw, 280px);
-        background: #0a0f1a;
+        background: rgba(10,10,15,0.97); backdrop-filter: blur(16px);
         border-left: 1px solid var(--border);
         padding: 5rem 2rem 2rem;
         gap: 1.5rem; z-index: 200;
         animation: slideInRight 0.25s ease-out;
       }
-      #nav-overlay {
-        display: none;
-        position: fixed; inset: 0;
-        background: rgba(0,0,0,0.85);
-        z-index: 199;
-      }
-      #nav-overlay.active { display: block; }
       @keyframes slideInRight { from { transform: translateX(100%); } to { transform: none; } }
 
       /* ── About ── */
@@ -1105,7 +1098,6 @@
       </button>
     </div>
   </nav>
-  <div id="nav-overlay"></div>
 
   <div class="cmdk-edge" id="cmdk-edge" aria-hidden="true"><span>›</span></div>
 
@@ -2262,24 +2254,21 @@
 
     // ── Mobile nav hamburger ───────────────────────────────
     (function() {
-      const btn     = document.getElementById('navHamburger');
-      const links   = document.querySelector('.nav-links');
-      const overlay = document.getElementById('nav-overlay');
+      const btn   = document.getElementById('navHamburger');
+      const links = document.querySelector('.nav-links');
       if (!btn || !links) return;
-
-      function closeMenu() {
-        links.classList.remove('mobile-open');
-        overlay && overlay.classList.remove('active');
-        btn.setAttribute('aria-expanded', false);
-      }
-
       btn.addEventListener('click', () => {
         const open = links.classList.toggle('mobile-open');
-        overlay && overlay.classList.toggle('active', open);
         btn.setAttribute('aria-expanded', open);
       });
-      links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-      overlay && overlay.addEventListener('click', closeMenu);
+      links.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => links.classList.remove('mobile-open'));
+      });
+      document.addEventListener('click', e => {
+        if (!btn.contains(e.target) && !links.contains(e.target)) {
+          links.classList.remove('mobile-open');
+        }
+      });
     })();
 
     // ── Hero photo ↔ Robot toggle ──────────────────────────
