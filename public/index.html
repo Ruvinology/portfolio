@@ -961,8 +961,8 @@
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
-      #cmdk-key { display: none; }    /* no Ctrl key on a phone — just show >_ */
-      .cmdk-hint { font-size: 0.85rem; padding: 0.35rem 0.6rem; }
+      #cmdk-key { display: none; }
+      .cmdk-hint { display: none; }   /* hide top terminal button on mobile — use left edge tab instead */
 
       /* Terminal becomes a left drawer, matching the swipe direction */
       #cmdk { padding-top: 0; align-items: stretch; justify-content: flex-start; }
@@ -1022,6 +1022,13 @@
         padding: 5rem 2rem 2rem;
         gap: 1.5rem; z-index: 200;
         animation: slideInRight 0.25s ease-out;
+      }
+      .nav-links.mobile-open::before {
+        content: '';
+        position: fixed; top: 0; left: 0; bottom: 0;
+        width: 100vw;
+        background: rgba(0,0,0,0.85);
+        z-index: -1;
       }
       @keyframes slideInRight { from { transform: translateX(100%); } to { transform: none; } }
 
