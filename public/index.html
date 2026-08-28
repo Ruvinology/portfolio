@@ -1023,13 +1023,13 @@
         gap: 1.5rem; z-index: 200;
         animation: slideInRight 0.25s ease-out;
       }
-      .nav-links.mobile-open::before {
-        content: '';
-        position: fixed; top: 0; left: 0; bottom: 0;
-        width: 100vw;
+      #nav-overlay {
+        display: none;
+        position: fixed; inset: 0;
         background: rgba(0,0,0,0.85);
-        z-index: -1;
+        z-index: 199;
       }
+      #nav-overlay.active { display: block; }
       @keyframes slideInRight { from { transform: translateX(100%); } to { transform: none; } }
 
       /* ── About ── */
@@ -1100,6 +1100,7 @@
         <span aria-hidden="true">&gt;_</span><span id="cmdk-key">Ctrl K</span>
       </button>
       <a href="/cv.pdf" download class="nav-cv">⬇ Download CV</a>
+      <div id="nav-overlay"></div>
       <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -2261,23 +2262,24 @@
 
     // ── Mobile nav hamburger ───────────────────────────────
     (function() {
-      const btn   = document.getElementById('navHamburger');
-      const links = document.querySelector('.nav-links');
+      const btn     = document.getElementById('navHamburger');
+      const links   = document.querySelector('.nav-links');
+      const overlay = document.getElementById('nav-overlay');
       if (!btn || !links) return;
+
+      function closeMenu() {
+        links.classList.remove('mobile-open');
+        overlay && overlay.classList.remove('active');
+        btn.setAttribute('aria-expanded', false);
+      }
+
       btn.addEventListener('click', () => {
         const open = links.classList.toggle('mobile-open');
+        overlay && overlay.classList.toggle('active', open);
         btn.setAttribute('aria-expanded', open);
       });
-      // Close menu when a link is clicked
-      links.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => links.classList.remove('mobile-open'));
-      });
-      // Close on outside click
-      document.addEventListener('click', e => {
-        if (!btn.contains(e.target) && !links.contains(e.target)) {
-          links.classList.remove('mobile-open');
-        }
-      });
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      overlay && overlay.addEventListener('click', closeMenu);
     })();
 
     // ── Hero photo ↔ Robot toggle ──────────────────────────
