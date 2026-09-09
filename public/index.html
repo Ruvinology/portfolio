@@ -32,6 +32,28 @@
       --radius: 16px;
     }
 
+    html.light-mode {
+      --bg: #f0f4f8;
+      --surface: #e2e8f0;
+      --card: #ffffff;
+      --border: #cbd5e1;
+      --text: #1a202c;
+      --muted: #64748b;
+    }
+    html.light-mode body { background: var(--bg); color: var(--text); }
+    html.light-mode nav { background: rgba(240,244,248,0.92) !important; }
+    html.light-mode body::before { opacity: 0.15; }
+    html.light-mode body::after { opacity: 0.3; }
+
+    /* ── Theme toggle button ── */
+    .theme-toggle {
+      background: none; border: 1px solid var(--border);
+      color: var(--text); border-radius: 100px;
+      width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 1rem; transition: all 0.2s;
+    }
+    .theme-toggle:hover { border-color: var(--accent2); transform: rotate(20deg); }
+
     html { scroll-behavior: smooth; overflow-x: hidden; }
     body { background: var(--bg); color: var(--text); font-family: 'Space Grotesk', sans-serif; line-height: 1.6; overflow-x: hidden; }
 
@@ -694,7 +716,9 @@
       transition: all 0.25s;
     }
     .edu-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
-    .edu-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; background: rgba(124,58,237,0.12); }
+    .edu-icon { width: 52px; height: 52px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; background: rgba(124,58,237,0.08); overflow: hidden; }
+    .edu-icon img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }
+    .edu-icon-initial { font-family: 'Space Mono', monospace; font-size: 1.1rem; font-weight: 700; color: var(--accent1); }
     .edu-info { flex: 1; }
     .edu-name { font-size: 0.95rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.25rem; }
     .edu-degree { font-size: 0.82rem; color: var(--accent1); font-weight: 500; margin-bottom: 0.25rem; }
@@ -708,7 +732,8 @@
       transition: all 0.25s; text-decoration: none; color: inherit;
     }
     .cert-card:hover { border-color: rgba(6,182,212,0.4); transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
-    .cert-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; background: rgba(6,182,212,0.12); }
+    .cert-icon { width: 52px; height: 52px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; background: rgba(6,182,212,0.08); overflow: hidden; }
+    .cert-icon img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
     .cert-info { flex: 1; }
     .cert-name { font-size: 0.95rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.25rem; }
     .cert-issuer { font-size: 0.82rem; color: var(--accent2); font-weight: 500; margin-bottom: 0.4rem; }
@@ -730,7 +755,8 @@
     .activity-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
     .activity-card:hover::before { opacity: 1; }
     .activity-header { display: flex; align-items: flex-start; gap: 1rem; }
-    .activity-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+    .activity-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; overflow: hidden; background: var(--card); border: 1px solid var(--border); }
+    .activity-icon img { width: 100%; height: 100%; object-fit: contain; }
     .activity-org { flex: 1; }
     .activity-org-name { font-size: 1rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.2rem; }
     .activity-duration { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--muted); }
@@ -1092,6 +1118,7 @@
       <button class="cmdk-hint" id="cmdk-open" aria-label="Open command terminal">
         <span aria-hidden="true">&gt;_</span><span id="cmdk-key">Ctrl K</span>
       </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">🌙</button>
       <a href="/cv.pdf" download class="nav-cv">⬇ Download CV</a>
       <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -1330,7 +1357,7 @@
             <span class="award-placement">Finalist</span>
           </div>
           <div class="award-title">NBSQA ICT Awards</div>
-          <p class="award-event">Selected as a finalist at the National Best Software Quality Awards (NBSQA) in the ICT category, recognising outstanding contributions and innovation in software and technology.</p>
+          <p class="award-event">Our software was selected as a finalist at the National Best Software Quality Awards (NBSQA) under the Tertiary Business category, recognising outstanding contributions and innovation in software and technology.</p>
           <div class="award-date">NBSQA · Sri Lanka</div>
           <button class="activity-gallery-btn" data-gallery="nsbqa">⊞ View Photos (2)</button>
         </div>
@@ -1346,7 +1373,9 @@
     <div class="edu-grid">
 
       <div class="edu-card reveal">
-        <div class="edu-icon">🎓</div>
+        <div class="edu-icon">
+          <img src="https://www.sjp.ac.lk/wp-content/uploads/2016/06/cropped-usjp-logo-fav-300x300.jpg" alt="University of Sri Jayewardenepura" />
+        </div>
         <div class="edu-info">
           <div class="edu-name">University of Sri Jayewardenepura</div>
           <div class="edu-degree">BS, Business Information Systems</div>
@@ -1355,7 +1384,9 @@
       </div>
 
       <div class="edu-card reveal">
-        <div class="edu-icon">📊</div>
+        <div class="edu-icon">
+          <img src="https://www.google.com/s2/favicons?domain=cmb.ac.lk&sz=256" alt="University of Colombo" />
+        </div>
         <div class="edu-info">
           <div class="edu-name">University of Colombo</div>
           <div class="edu-degree">BSc Applied Data Analytics</div>
@@ -1364,7 +1395,9 @@
       </div>
 
       <div class="edu-card reveal">
-        <div class="edu-icon">💻</div>
+        <div class="edu-icon">
+          <img src="https://uom.lk/assets/images/logo_0.png" alt="University of Moratuwa" />
+        </div>
         <div class="edu-info">
           <div class="edu-name">University of Moratuwa</div>
           <div class="edu-degree">Bachelor of Information Technology</div>
@@ -1373,7 +1406,9 @@
       </div>
 
       <div class="edu-card reveal">
-        <div class="edu-icon">🏫</div>
+        <div class="edu-icon">
+          <img src="/logos/taxila-logo.jpg" alt="Taxila Central College" />
+        </div>
         <div class="edu-info">
           <div class="edu-name">Taxila Central College</div>
           <div class="edu-degree">Secondary Education</div>
@@ -1391,6 +1426,9 @@
 
       <div class="activity-card reveal">
         <div class="activity-header">
+          <div class="activity-icon">
+            <img src="https://www.google.com/s2/favicons?domain=aiesec.org&sz=256" alt="AIESEC" />
+          </div>
           <div class="activity-org">
             <div class="activity-org-name">AIESEC in University of Sri Jayewardenepura</div>
             <div class="activity-duration">Present</div>
@@ -1407,6 +1445,9 @@
 
       <div class="activity-card reveal">
         <div class="activity-header">
+          <div class="activity-icon">
+            <img src="/logos/s@it-log.jpg" alt="S@IT" />
+          </div>
           <div class="activity-org">
             <div class="activity-org-name">S@IT – Department of Information Technology</div>
             <div class="activity-duration">Present</div>
@@ -1423,6 +1464,9 @@
 
       <div class="activity-card reveal">
         <div class="activity-header">
+          <div class="activity-icon">
+            <img src="https://www.google.com/s2/favicons?domain=isaca.org&sz=256" alt="ISACA" />
+          </div>
           <div class="activity-org">
             <div class="activity-org-name">USJ ISACA Student Group</div>
             <div class="activity-duration">Jul 2024 – Present · 2 years 2 months</div>
@@ -2218,7 +2262,7 @@
         const data = await res.json();
         grid.innerHTML = data.map(c => `
           <a href="${c.url}" target="_blank" class="cert-card reveal">
-            <div class="cert-icon">${c.icon}</div>
+            <div class="cert-icon">${c.logo ? `<img src="${c.logo}" alt="${c.issuer}" />` : c.icon}</div>
             <div class="cert-info">
               <div class="cert-name">${c.name}</div>
               <div class="cert-issuer">${c.issuer}</div>
@@ -2251,6 +2295,19 @@
         });
       });
     }
+
+    // ── Light / Dark mode toggle ───────────────────────────
+    (function() {
+      const btn = document.getElementById('themeToggle');
+      const html = document.documentElement;
+      const saved = localStorage.getItem('rp-theme');
+      if (saved === 'light') { html.classList.add('light-mode'); btn.textContent = '☀️'; }
+      btn.addEventListener('click', () => {
+        const isLight = html.classList.toggle('light-mode');
+        btn.textContent = isLight ? '☀️' : '🌙';
+        localStorage.setItem('rp-theme', isLight ? 'light' : 'dark');
+      });
+    })();
 
     // ── Mobile nav hamburger ───────────────────────────────
     (function() {

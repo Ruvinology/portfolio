@@ -2,6 +2,7 @@
   {
     "id": 1,
     "icon": "🎓",
+    "logo": "/logos/ibm-logo.png",
     "name": "IBM Data Science Professional Certificate",
     "issuer": "IBM / Coursera",
     "date": "March 2026",
@@ -10,6 +11,7 @@
   {
     "id": 2,
     "icon": "🤖",
+    "logo": "https://cdn.simpleicons.org/google/4285F4",
     "name": "Google AI Essentials",
     "issuer": "Google / Coursera",
     "date": "January 2026",
@@ -18,6 +20,7 @@
   {
     "id": 3,
     "icon": "🧠",
+    "logo": "https://www.google.com/s2/favicons?domain=deeplearning.ai&sz=256",
     "name": "Advanced Learning Algorithms",
     "issuer": "DeepLearning.AI / Coursera",
     "date": "June 2026",
@@ -26,6 +29,7 @@
   {
     "id": 4,
     "icon": "📈",
+    "logo": "https://www.google.com/s2/favicons?domain=deeplearning.ai&sz=256",
     "name": "Supervised Machine Learning: Regression and Classification",
     "issuer": "DeepLearning.AI / Coursera",
     "date": "June 2026",
@@ -34,6 +38,7 @@
   {
     "id": 5,
     "icon": "🌐",
+    "logo": "https://cdn.simpleicons.org/coursera/0056D2",
     "name": "WordPress Website Development Course",
     "issuer": "Coursera",
     "date": "May 2026",
@@ -42,6 +47,7 @@
   {
     "id": 6,
     "icon": "🐍",
+    "logo": "https://cdn.simpleicons.org/udemy/A435F0",
     "name": "Python For Data Science - Real Time Experience",
     "issuer": "Udemy",
     "date": "July 2025",
@@ -50,6 +56,7 @@
   {
     "id": 7,
     "icon": "🔐",
+    "logo": "https://www.google.com/s2/favicons?domain=apnic.net&sz=256",
     "name": "Cybersecurity Fundamentals",
     "issuer": "APNIC Academy",
     "date": "January 2026",
