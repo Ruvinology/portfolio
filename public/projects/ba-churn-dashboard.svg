@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#0c1a2e"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#0284c7;stop-opacity:0.6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.15"/>
+
+  <!-- Grid lines -->
+  <line x1="0" y1="100" x2="800" y2="100" stroke="#1e293b" stroke-width="1"/>
+  <line x1="0" y1="200" x2="800" y2="200" stroke="#1e293b" stroke-width="1"/>
+  <line x1="0" y1="300" x2="800" y2="300" stroke="#1e293b" stroke-width="1"/>
+  <line x1="0" y1="400" x2="800" y2="400" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Header bar -->
+  <rect width="800" height="60" fill="#0f1f35"/>
+  <rect width="800" height="3" y="60" fill="url(#cyan)"/>
+
+  <!-- Title -->
+  <text x="30" y="38" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#e2e8f0">Customer Churn Analytics</text>
+  <text x="30" y="56" font-family="Arial,sans-serif" font-size="11" fill="#64748b">Power BI · Telecom Dataset · 7,043 Records</text>
+
+  <!-- Power BI badge -->
+  <rect x="680" y="15" width="90" height="28" rx="6" fill="#f2c811" opacity="0.15"/>
+  <text x="725" y="33" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#f2c811" text-anchor="middle">Power BI</text>
+
+  <!-- KPI Cards -->
+  <!-- Churn Rate -->
+  <rect x="30" y="80" width="150" height="80" rx="8" fill="#0f2035" stroke="#06b6d4" stroke-width="1" opacity="0.8"/>
+  <text x="105" y="118" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#06b6d4" text-anchor="middle" filter="url(#glow)">27%</text>
+  <text x="105" y="145" font-family="Arial,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Churn Rate</text>
+
+  <!-- Retention -->
+  <rect x="195" y="80" width="150" height="80" rx="8" fill="#0f2035" stroke="#10b981" stroke-width="1" opacity="0.8"/>
+  <text x="270" y="118" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#10b981" text-anchor="middle">73%</text>
+  <text x="270" y="145" font-family="Arial,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Retention Rate</text>
+
+  <!-- Avg Tenure -->
+  <rect x="360" y="80" width="150" height="80" rx="8" fill="#0f2035" stroke="#a78bfa" stroke-width="1" opacity="0.8"/>
+  <text x="435" y="118" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#a78bfa" text-anchor="middle">32.4</text>
+  <text x="435" y="145" font-family="Arial,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Avg Tenure (mo)</text>
+
+  <!-- Avg Charges -->
+  <rect x="525" y="80" width="150" height="80" rx="8" fill="#0f2035" stroke="#f59e0b" stroke-width="1" opacity="0.8"/>
+  <text x="600" y="118" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#f59e0b" text-anchor="middle">$64.8</text>
+  <text x="600" y="145" font-family="Arial,sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Avg Monthly Charge</text>
+
+  <!-- Bar chart: Churn by Contract -->
+  <rect x="30" y="185" width="340" height="190" rx="8" fill="#0a1628" stroke="#1e293b" stroke-width="1"/>
+  <text x="50" y="208" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#94a3b8">Churn by Contract Type</text>
+  <!-- Month-to-month bar -->
+  <rect x="70" y="280" width="60" height="75" rx="3" fill="url(#bar1)"/>
+  <text x="100" y="275" font-family="Arial,sans-serif" font-size="10" fill="#06b6d4" text-anchor="middle">42%</text>
+  <text x="100" y="368" font-family="Arial,sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Month-to</text>
+  <text x="100" y="379" font-family="Arial,sans-serif" font-size="9" fill="#64748b" text-anchor="middle">month</text>
+  <!-- One year bar -->
+  <rect x="165" y="320" width="60" height="35" rx="3" fill="#0284c7" opacity="0.7"/>
+  <text x="195" y="315" font-family="Arial,sans-serif" font-size="10" fill="#0ea5e9" text-anchor="middle">11%</text>
+  <text x="195" y="368" font-family="Arial,sans-serif" font-size="9" fill="#64748b" text-anchor="middle">One year</text>
+  <!-- Two year bar -->
+  <rect x="260" y="344" width="60" height="11" rx="3" fill="#075985" opacity="0.8"/>
+  <text x="290" y="339" font-family="Arial,sans-serif" font-size="10" fill="#7dd3fc" text-anchor="middle">3%</text>
+  <text x="290" y="368" font-family="Arial,sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Two year</text>
+  <!-- X axis -->
+  <line x1="50" y1="355" x2="340" y2="355" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Line chart: Churn by Tenure -->
+  <rect x="390" y="185" width="380" height="190" rx="8" fill="#0a1628" stroke="#1e293b" stroke-width="1"/>
+  <text x="410" y="208" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#94a3b8">Churned Customers by Tenure</text>
+  <!-- Axes -->
+  <line x1="420" y1="355" x2="750" y2="355" stroke="#1e293b" stroke-width="1"/>
+  <line x1="420" y1="225" x2="420" y2="355" stroke="#1e293b" stroke-width="1"/>
+  <!-- Line path -->
+  <polyline points="420,230 440,248 460,270 480,295 500,312 520,325 540,333 560,338 580,342 600,344 620,345 640,346 660,347 680,348 700,349 720,349 740,350 750,350"
+    fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Area fill -->
+  <polygon points="420,230 440,248 460,270 480,295 500,312 520,325 540,333 560,338 580,342 600,344 620,345 640,346 660,347 680,348 700,349 720,349 740,350 750,350 750,355 420,355"
+    fill="#06b6d4" opacity="0.08"/>
+  <!-- X labels -->
+  <text x="420" y="368" font-family="Arial,sans-serif" font-size="9" fill="#475569" text-anchor="middle">0</text>
+  <text x="530" y="368" font-family="Arial,sans-serif" font-size="9" fill="#475569" text-anchor="middle">20</text>
+  <text x="640" y="368" font-family="Arial,sans-serif" font-size="9" fill="#475569" text-anchor="middle">40</text>
+  <text x="750" y="368" font-family="Arial,sans-serif" font-size="9" fill="#475569" text-anchor="middle">60</text>
+  <text x="585" y="380" font-family="Arial,sans-serif" font-size="9" fill="#475569" text-anchor="middle">Tenure (months)</text>
+
+  <!-- Payment method row -->
+  <rect x="30" y="390" width="740" height="80" rx="8" fill="#0a1628" stroke="#1e293b" stroke-width="1"/>
+  <text x="50" y="412" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#94a3b8">Churned by Payment Method</text>
+  <!-- Bars horizontal -->
+  <rect x="200" y="420" width="300" height="14" rx="3" fill="#06b6d4" opacity="0.8"/>
+  <text x="190" y="431" font-family="Arial,sans-serif" font-size="9" fill="#64748b" text-anchor="end">Electronic check</text>
+  <text x="510" y="431" font-family="Arial,sans-serif" font-size="9" fill="#06b6d4">1,071</text>
+  <rect x="200" y="442" width="120" height="14" rx="3" fill="#0284c7" opacity="0.7"/>
+  <text x="190" y="453" font-family="Arial,sans-serif" font-size="9" fill="#64748b" text-anchor="end">Mailed check</text>
+  <text x="330" y="453" font-family="Arial,sans-serif" font-size="9" fill="#7dd3fc">308</text>
+  <rect x="200" y="464" width="95" height="10" rx="3" fill="#075985" opacity="0.8"/>
+  <text x="190" y="473" font-family="Arial,sans-serif" font-size="9" fill="#64748b" text-anchor="end">Bank transfer</text>
+  <text x="305" y="473" font-family="Arial,sans-serif" font-size="9" fill="#7dd3fc">258</text>
+</svg>

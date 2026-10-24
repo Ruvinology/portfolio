@@ -116,6 +116,15 @@ router.get('/projects', async (req, res) => {
   }
 });
 
+// GET /api/ba-projects
+router.get('/ba-projects', (req, res) => {
+  try {
+    res.json(readData('ba-projects.json'));
+  } catch (err) {
+    res.status(500).json({ error: 'Could not load BA projects' });
+  }
+});
+
 // GET /api/certs
 router.get('/certs', (req, res) => {
   try {

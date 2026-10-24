@@ -45,6 +45,58 @@
     html.light-mode body::before { opacity: 0.15; }
     html.light-mode body::after { opacity: 0.3; }
 
+    /* ── DS / BA mode toggle pill ── */
+    .mode-toggle {
+      display: flex; align-items: center;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 100px; padding: 3px; cursor: pointer;
+      position: relative; width: 72px; height: 34px;
+      transition: border-color 0.2s;
+    }
+    .mode-toggle:hover { border-color: var(--accent1); }
+    .mode-indicator {
+      position: absolute; left: 3px;
+      width: 31px; height: 26px;
+      border-radius: 100px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: 0 0 10px rgba(124,58,237,0.45);
+      pointer-events: none;
+    }
+    .mode-toggle[data-mode="ba"] .mode-indicator { transform: translateX(35px); }
+    .mode-toggle[data-mode="ba"] .mode-indicator {
+      background: linear-gradient(135deg, #0ea5e9, var(--accent2));
+      box-shadow: 0 0 10px rgba(6,182,212,0.45);
+    }
+    .mode-icon {
+      width: 33px; height: 26px; display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1; color: var(--muted);
+      transition: color 0.28s;
+    }
+    .mode-toggle[data-mode="ds"] .mode-icon[data-for="ds"] { color: #fff; }
+    .mode-toggle[data-mode="ba"] .mode-icon[data-for="ba"] { color: #fff; }
+    .mode-toggle::after {
+      content: attr(data-label);
+      position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+      background: var(--surface); border: 1px solid var(--border); color: var(--text);
+      font-size: 0.7rem; font-weight: 600; white-space: nowrap;
+      padding: 3px 8px; border-radius: 6px; pointer-events: none;
+      opacity: 0; transition: opacity 0.15s;
+    }
+    .mode-toggle:hover::after { opacity: 1; }
+
+    /* smooth fade when mode-swapped text changes */
+    #heroTagline, #aboutHeading, #aboutP1, #aboutP2,
+    #projectsSubtitle, #contactTitle, #contactSub {
+      transition: opacity 0.25s ease;
+    }
+    html.mode-swapping #heroTagline,
+    html.mode-swapping #aboutHeading,
+    html.mode-swapping #aboutP1,
+    html.mode-swapping #aboutP2,
+    html.mode-swapping #projectsSubtitle,
+    html.mode-swapping #contactSub { opacity: 0; }
+
     /* ── Theme toggle button ── */
     .theme-toggle {
       background: none; border: 1px solid var(--border);
@@ -506,6 +558,19 @@
     [data-end="ai"].snapped     { border-color: rgba(6,182,212,0.6);  box-shadow: 0 0 14px rgba(6,182,212,0.25); }
     [data-end="deploy"].snapped { border-color: rgba(245,158,11,0.6); box-shadow: 0 0 14px rgba(245,158,11,0.25); }
     [data-end="db"].snapped     { border-color: rgba(52,211,153,0.6); box-shadow: 0 0 14px rgba(52,211,153,0.25); }
+    /* BA mode category colours */
+    [data-end="req"].snapped     { border-color: rgba(124,58,237,0.6); box-shadow: 0 0 14px rgba(124,58,237,0.25); }
+    [data-end="process"].snapped { border-color: rgba(6,182,212,0.6);  box-shadow: 0 0 14px rgba(6,182,212,0.25); }
+    [data-end="data"].snapped    { border-color: rgba(245,158,11,0.6); box-shadow: 0 0 14px rgba(245,158,11,0.25); }
+    [data-end="agile"].snapped   { border-color: rgba(52,211,153,0.6); box-shadow: 0 0 14px rgba(52,211,153,0.25); }
+    [data-end="ux"].snapped      { border-color: rgba(251,113,133,0.6);box-shadow: 0 0 14px rgba(251,113,133,0.25); }
+    .skill-filter-btn.active[data-cat="req"]     { color: #a78bfa; background: rgba(124,58,237,0.15); border-color: rgba(124,58,237,0.4); }
+    .skill-filter-btn.active[data-cat="process"] { color: var(--accent2); background: rgba(6,182,212,0.1); border-color: rgba(6,182,212,0.4); }
+    .skill-filter-btn.active[data-cat="data"]    { color: var(--accent3); background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.4); }
+    .skill-filter-btn.active[data-cat="agile"]   { color: #34d399; background: rgba(52,211,153,0.1); border-color: rgba(52,211,153,0.4); }
+    .skill-filter-btn.active[data-cat="ux"]      { color: #fb7185; background: rgba(251,113,133,0.1); border-color: rgba(251,113,133,0.4); }
+    /* text-only skill icon */
+    .skill-icon-text { font-size: 0.58rem; font-weight: 700; text-align: center; line-height: 1.2; color: var(--text); }
     .skills-filter-bar { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 50; }
     .skills-filter-inner {
       display: flex; gap: 0.4rem; align-items: center;
@@ -716,9 +781,8 @@
       transition: all 0.25s;
     }
     .edu-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
-    .edu-icon { width: 52px; height: 52px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; background: rgba(124,58,237,0.08); overflow: hidden; }
-    .edu-icon img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }
-    .edu-icon-initial { font-family: 'Space Mono', monospace; font-size: 1.1rem; font-weight: 700; color: var(--accent1); }
+    .edu-icon { width: 52px; height: 52px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; background: var(--card); border: 1px solid var(--border); overflow: hidden; }
+    .edu-icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
     .edu-info { flex: 1; }
     .edu-name { font-size: 0.95rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.25rem; }
     .edu-degree { font-size: 0.82rem; color: var(--accent1); font-weight: 500; margin-bottom: 0.25rem; }
@@ -732,8 +796,8 @@
       transition: all 0.25s; text-decoration: none; color: inherit;
     }
     .cert-card:hover { border-color: rgba(6,182,212,0.4); transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
-    .cert-icon { width: 52px; height: 52px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; background: rgba(6,182,212,0.08); overflow: hidden; }
-    .cert-icon img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+    .cert-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; background: rgba(6,182,212,0.12); overflow: hidden; }
+    .cert-icon img { width: 100%; height: 100%; object-fit: contain; border-radius: 8px; }
     .cert-info { flex: 1; }
     .cert-name { font-size: 0.95rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.25rem; }
     .cert-issuer { font-size: 0.82rem; color: var(--accent2); font-weight: 500; margin-bottom: 0.4rem; }
@@ -756,7 +820,7 @@
     .activity-card:hover::before { opacity: 1; }
     .activity-header { display: flex; align-items: flex-start; gap: 1rem; }
     .activity-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; overflow: hidden; background: var(--card); border: 1px solid var(--border); }
-    .activity-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .activity-icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
     .activity-org { flex: 1; }
     .activity-org-name { font-size: 1rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.2rem; }
     .activity-duration { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--muted); }
@@ -1103,7 +1167,7 @@
   </div>
 
   <nav>
-    <a href="#hero" class="nav-logo">RP</a>
+    <a href="#hero" class="nav-logo">RP<span id="modeBadge" style="font-family:'Space Grotesk',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.05em;margin-left:6px;padding:2px 6px;border-radius:4px;background:rgba(124,58,237,0.2);color:var(--accent1);vertical-align:middle;-webkit-text-fill-color:var(--accent1);transition:all 0.3s;">DS</span></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -1117,6 +1181,25 @@
     <div style="display:flex;align-items:center;gap:0.75rem">
       <button class="cmdk-hint" id="cmdk-open" aria-label="Open command terminal">
         <span aria-hidden="true">&gt;_</span><span id="cmdk-key">Ctrl K</span>
+      </button>
+      <button class="mode-toggle" id="modeToggle" data-mode="ds" data-label="DS Mode" aria-label="Switch portfolio mode">
+        <span class="mode-indicator"></span>
+        <span class="mode-icon" data-for="ds">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="2.5" cy="7.5" r="2" fill="currentColor"/>
+            <circle cx="12.5" cy="2.5" r="2" fill="currentColor"/>
+            <circle cx="12.5" cy="12.5" r="2" fill="currentColor"/>
+            <line x1="4.2" y1="6.7" x2="10.8" y2="3.1" stroke="currentColor" stroke-width="1.1"/>
+            <line x1="4.2" y1="8.3" x2="10.8" y2="11.9" stroke="currentColor" stroke-width="1.1"/>
+          </svg>
+        </span>
+        <span class="mode-icon" data-for="ba">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="8.5" width="3" height="5.5" rx="0.8" fill="currentColor"/>
+            <rect x="5.5" y="5" width="3" height="9" rx="0.8" fill="currentColor"/>
+            <rect x="10" y="1.5" width="3" height="12.5" rx="0.8" fill="currentColor"/>
+          </svg>
+        </span>
       </button>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">🌙</button>
       <a href="/cv.pdf" download class="nav-cv">⬇ Download CV</a>
@@ -1157,7 +1240,7 @@
       <h1 class="hero-name">
         Hi, I'm<br /><span class="highlight">Ruvin Palihawadana</span>
       </h1>
-      <p class="hero-tagline">
+      <p class="hero-tagline" id="heroTagline">
         Turning raw data into meaningful insights. Aspiring Data Scientist with a passion for machine learning, analytics, and solving real-world problems.
       </p>
       <div class="hero-cta">
@@ -1215,9 +1298,9 @@
 
   <section id="about">
     <div class="about-text reveal">
-      <h2>Driven by curiosity,<br />grounded in data.</h2>
-      <p>I'm an undergraduate student passionate about Data Science and its potential to drive better decisions. I love exploring datasets, building models, and communicating findings through compelling visualisations.</p>
-      <p>When I'm not wrangling data, you'll find me exploring new tools, working on personal projects, or learning about the intersection of AI and society.</p>
+      <h2 id="aboutHeading">Driven by curiosity,<br />grounded in data.</h2>
+      <p id="aboutP1">I'm an undergraduate student passionate about Data Science and its potential to drive better decisions. I love exploring datasets, building models, and communicating findings through compelling visualisations.</p>
+      <p id="aboutP2">When I'm not wrangling data, you'll find me exploring new tools, working on personal projects, or learning about the intersection of AI and society.</p>
     </div>
     <div class="about-right">
       <div class="about-stats">
@@ -1297,7 +1380,7 @@
   <section id="projects">
     <div class="section-header reveal">
       <h2>Featured Projects</h2>
-      <p style="color:var(--muted);font-size:1rem;margin-top:0.5rem;max-width:480px;margin-inline:auto;">A selection of ML pipelines, data explorations, and apps I've built.</p>
+      <p id="projectsSubtitle" style="color:var(--muted);font-size:1rem;margin-top:0.5rem;max-width:480px;margin-inline:auto;">A selection of ML pipelines, data explorations, and apps I've built.</p>
     </div>
     <div class="filter-bar reveal">
       <button class="filter-btn active" data-filter="all">All</button>
@@ -1332,14 +1415,14 @@
       </div>
       <div class="awards-grid">
 
-        <div class="award-card gold reveal">
+        <div class="award-card finalist reveal">
           <div class="award-badge-row">
-            <span class="award-placement">Subject Prize Winner</span>
+            <span class="award-placement">Winning Circle</span>
           </div>
-          <div class="award-title">BL6 – Management Accounting</div>
-          <p class="award-event">Awarded the Subject Prize for achieving the highest marks in Business Level 6 – Management Accounting by CA Sri Lanka (Institute of Chartered Accountants of Sri Lanka).</p>
-          <div class="award-date">December 2023 · CA Sri Lanka</div>
-          <button class="activity-gallery-btn" data-gallery="casl">⊞ View Photos (2)</button>
+          <div class="award-title">NBQSA 2026 — National ICT Awards</div>
+          <p class="award-event">SolveMate, our AI-powered solvent-selection decision-support platform, was recognised in the Winning Circle under the Tertiary Student Project (Business) category at the National ICT Awards NBQSA 2026, conducted by BCS, the Chartered Institute for IT (Sri Lanka Section). Ceremony held on 25 September 2026.</p>
+          <div class="award-date">September 2026 · BCS Sri Lanka</div>
+          <button class="activity-gallery-btn" data-gallery="nsbqa">⊞ View Photos (2)</button>
         </div>
 
         <div class="award-card silver reveal">
@@ -1352,14 +1435,14 @@
           <button class="activity-gallery-btn" data-gallery="cryptx">⊞ View Photos (2)</button>
         </div>
 
-        <div class="award-card finalist reveal">
+        <div class="award-card gold reveal">
           <div class="award-badge-row">
-            <span class="award-placement">Finalist</span>
+            <span class="award-placement">Subject Prize Winner</span>
           </div>
-          <div class="award-title">NBSQA ICT Awards</div>
-          <p class="award-event">Our software was selected as a finalist at the National Best Software Quality Awards (NBSQA) under the Tertiary Business category, recognising outstanding contributions and innovation in software and technology.</p>
-          <div class="award-date">NBSQA · Sri Lanka</div>
-          <button class="activity-gallery-btn" data-gallery="nsbqa">⊞ View Photos (2)</button>
+          <div class="award-title">BL6 – Management Accounting</div>
+          <p class="award-event">Awarded the Subject Prize for achieving the highest marks in Business Level 6 – Management Accounting by CA Sri Lanka (Institute of Chartered Accountants of Sri Lanka).</p>
+          <div class="award-date">December 2023 · CA Sri Lanka</div>
+          <button class="activity-gallery-btn" data-gallery="casl">⊞ View Photos (2)</button>
         </div>
 
       </div>
@@ -1389,14 +1472,14 @@
         </div>
         <div class="edu-info">
           <div class="edu-name">University of Colombo</div>
-          <div class="edu-degree">BSc Applied Data Analytics</div>
+          <div class="edu-degree">HND in Applied Data Analytics</div>
           <div class="edu-date">Jan 2026 – 2028</div>
         </div>
       </div>
 
       <div class="edu-card reveal">
         <div class="edu-icon">
-          <img src="https://uom.lk/assets/images/logo_0.png" alt="University of Moratuwa" />
+          <img src="/logos/University_of_Moratuwa_logo.png" alt="University of Moratuwa" />
         </div>
         <div class="edu-info">
           <div class="edu-name">University of Moratuwa</div>
@@ -1427,44 +1510,6 @@
       <div class="activity-card reveal">
         <div class="activity-header">
           <div class="activity-icon">
-            <img src="https://www.google.com/s2/favicons?domain=aiesec.org&sz=256" alt="AIESEC" />
-          </div>
-          <div class="activity-org">
-            <div class="activity-org-name">AIESEC in University of Sri Jayewardenepura</div>
-            <div class="activity-duration">Present</div>
-          </div>
-        </div>
-        <div class="activity-roles">
-          <div class="activity-role">
-            <span class="activity-role-tag violet">IGV B2B Member</span>
-            <p class="activity-role-desc">Coordinated with partner organizations to support global volunteer exchange operations. Assisted with outreach, communication, and stakeholder relationship management to promote international volunteer opportunities.</p>
-          </div>
-        </div>
-        <button class="activity-gallery-btn" data-gallery="aiesec">⊞ View Photos (5)</button>
-      </div>
-
-      <div class="activity-card reveal">
-        <div class="activity-header">
-          <div class="activity-icon">
-            <img src="/logos/s@it-log.jpg" alt="S@IT" />
-          </div>
-          <div class="activity-org">
-            <div class="activity-org-name">S@IT – Department of Information Technology</div>
-            <div class="activity-duration">Present</div>
-          </div>
-        </div>
-        <div class="activity-roles">
-          <div class="activity-role">
-            <span class="activity-role-tag amber">Co Financial Committee Member</span>
-            <p class="activity-role-desc">Assisted in budgeting, expense tracking, and financial planning for department events. Coordinated sponsorships, vendor payments, and financial documentation to ensure transparent and efficient fund management.</p>
-          </div>
-        </div>
-        <button class="activity-gallery-btn" data-gallery="sait">⊞ View Photos (8)</button>
-      </div>
-
-      <div class="activity-card reveal">
-        <div class="activity-header">
-          <div class="activity-icon">
             <img src="https://www.google.com/s2/favicons?domain=isaca.org&sz=256" alt="ISACA" />
           </div>
           <div class="activity-org">
@@ -1489,13 +1534,51 @@
         <button class="activity-gallery-btn" data-gallery="isaca">⊞ View Photos (3)</button>
       </div>
 
+      <div class="activity-card reveal">
+        <div class="activity-header">
+          <div class="activity-icon">
+            <img src="https://www.google.com/s2/favicons?domain=aiesec.org&sz=256" alt="AIESEC" />
+          </div>
+          <div class="activity-org">
+            <div class="activity-org-name">AIESEC in University of Sri Jayewardenepura</div>
+            <div class="activity-duration">Present</div>
+          </div>
+        </div>
+        <div class="activity-roles">
+          <div class="activity-role">
+            <span class="activity-role-tag violet">IGV B2B Member</span>
+            <p class="activity-role-desc">Coordinated with partner organizations to support global volunteer exchange operations. Assisted with outreach, communication, and stakeholder relationship management to promote international volunteer opportunities.</p>
+          </div>
+        </div>
+        <button class="activity-gallery-btn" data-gallery="aiesec">⊞ View Photos (5)</button>
+      </div>
+
+      <div class="activity-card reveal">
+        <div class="activity-header">
+          <div class="activity-icon">
+            <img src="/logos/s@it-log.jpg" alt="S@IT" onerror="this.src='https://www.google.com/s2/favicons?domain=it.sjp.ac.lk&sz=256'" />
+          </div>
+          <div class="activity-org">
+            <div class="activity-org-name">S@IT – Student Association of Information Technology</div>
+            <div class="activity-duration">Present</div>
+          </div>
+        </div>
+        <div class="activity-roles">
+          <div class="activity-role">
+            <span class="activity-role-tag amber">Co Financial Committee Member</span>
+            <p class="activity-role-desc">Assisted in budgeting, expense tracking, and financial planning for department events. Coordinated sponsorships, vendor payments, and financial documentation to ensure transparent and efficient fund management.</p>
+          </div>
+        </div>
+        <button class="activity-gallery-btn" data-gallery="sait">⊞ View Photos (8)</button>
+      </div>
+
     </div>
   </section>
 
   <section id="contact">
     <div class="contact-inner reveal">
-      <h2 class="contact-title">Open to Opportunities</h2>
-      <p>Whether it's internships, collaborations, or just a chat about data — my inbox is always open.</p>
+      <h2 class="contact-title" id="contactTitle">Open to Opportunities</h2>
+      <p id="contactSub">Whether it's internships, collaborations, or just a chat about data — my inbox is always open.</p>
 
       <form class="contact-form" id="contact-form">
         <div class="form-row">
@@ -2077,7 +2160,7 @@
     }
 
     // ── Skills Scatter ──────────────────────────────────────
-    function initSkillsScatter() {
+    window.initSkillsScatter = function initSkillsScatter() {
       const section = document.getElementById('skills');
       if (!section) return;
       const icons = Array.from(section.querySelectorAll('.skill-icon'));
@@ -2262,7 +2345,7 @@
         const data = await res.json();
         grid.innerHTML = data.map(c => `
           <a href="${c.url}" target="_blank" class="cert-card reveal">
-            <div class="cert-icon">${c.logo ? `<img src="${c.logo}" alt="${c.issuer}" />` : c.icon}</div>
+            <div class="cert-icon">${c.logo ? `<img src="${c.logo}" alt="${c.issuer}" onerror="this.parentElement.textContent='${c.icon}'">` : c.icon}</div>
             <div class="cert-info">
               <div class="cert-name">${c.name}</div>
               <div class="cert-issuer">${c.issuer}</div>
@@ -2295,6 +2378,218 @@
         });
       });
     }
+
+    // ── BA project loader ──────────────────────────────────
+    async function loadBAProjects() {
+      const grid = document.getElementById('projects-grid');
+      const filterBar = document.querySelector('.filter-bar');
+      // Swap filter buttons for BA categories
+      filterBar.innerHTML = `
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="analytics">Analytics</button>
+        <button class="filter-btn" data-filter="docs">Documentation</button>
+        <button class="filter-btn" data-filter="dev">Web / App</button>`;
+      try {
+        const res  = await fetch('/api/ba-projects');
+        const data = await res.json();
+        grid.innerHTML = data.map((p, i) => {
+          const m = (p.iconBg || '').match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+          const rgb = m ? `${m[1]},${m[2]},${m[3]}` : '6,182,212';
+          const imgSrc = p.image || '';
+          return `
+          <div class="project-card reveal" data-category="${p.categories.join(' ')}" style="--card-color:${rgb}">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-img-wrap">
+                  ${imgSrc
+                    ? `<div class="card-img-bg" style="background-image:url('${imgSrc}')"></div>
+                       <img src="${imgSrc}" alt="${p.title}" class="card-img" loading="lazy">`
+                    : `<div class="card-img-placeholder" style="background:${p.iconBg}"><span>${p.icon}</span></div>`
+                  }
+                  <div class="card-img-overlay"></div>
+                </div>
+                <div class="card-front-footer">
+                  <div class="project-title">${p.title}</div>
+                  <div class="flip-hint" style="margin-top:0.4rem">↷ flip for details</div>
+                </div>
+              </div>
+              <div class="card-back">
+                <div class="back-title">${p.title}</div>
+                <p class="project-desc">${p.description}</p>
+                <div class="back-links">
+                  ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener" class="back-link" onclick="event.stopPropagation()">⬡ GitHub</a>` : ''}
+                  ${p.demo   ? `<a href="${p.demo}"   target="_blank" rel="noopener" class="back-link" onclick="event.stopPropagation()">↗ View Project</a>` : ''}
+                </div>
+                <div class="flip-hint">↶ click to flip back</div>
+              </div>
+            </div>
+          </div>`;
+        }).join('');
+        reveal(grid.querySelectorAll('.project-card'), 60);
+        grid.querySelectorAll('.project-card').forEach(card => {
+          card.addEventListener('click', () => card.classList.toggle('is-flipped'));
+        });
+        initFilter();
+      } catch (e) {
+        grid.innerHTML = '<p style="color:var(--muted)">Could not load BA projects.</p>';
+      }
+    }
+
+    // Restore DS projects + filter bar
+    async function restoreDSProjects() {
+      const filterBar = document.querySelector('.filter-bar');
+      filterBar.innerHTML = `
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+        <button class="filter-btn" data-filter="nlp">NLP</button>
+        <button class="filter-btn" data-filter="viz">Web / App</button>`;
+      await loadProjects();
+    }
+
+    // ── DS / BA mode toggle ────────────────────────────────
+    (function() {
+      const content = {
+        ds: {
+          title: 'Ruvin Palihawadana · Data Science Portfolio',
+          tagline: 'Turning raw data into meaningful insights. Aspiring Data Scientist with a passion for machine learning, analytics, and solving real-world problems.',
+          aboutHeading: 'Driven by curiosity,<br />grounded in data.',
+          aboutP1: "I'm an undergraduate student passionate about Data Science and its potential to drive better decisions. I love exploring datasets, building models, and communicating findings through compelling visualisations.",
+          aboutP2: "When I'm not wrangling data, you'll find me exploring new tools, working on personal projects, or learning about the intersection of AI and society.",
+          projectsSubtitle: "A selection of ML pipelines, data explorations, and apps I've built.",
+          contactSub: "Whether it's internships, collaborations, or just a chat about data — my inbox is always open.",
+          label: 'DS Mode',
+        },
+        ba: {
+          title: 'Ruvin Palihawadana · Business Analyst Portfolio',
+          tagline: 'Turning business challenges into structured solutions. Aspiring Business Analyst with a passion for requirements engineering, process optimisation, and stakeholder-driven decisions.',
+          aboutHeading: 'Driven by clarity,<br />grounded in process.',
+          aboutP1: "I'm an undergraduate student passionate about Business Analysis and its potential to bridge the gap between technology and real business needs. I thrive on eliciting requirements, mapping workflows, and translating complexity into actionable solutions.",
+          aboutP2: "When I'm not mapping processes, you'll find me studying stakeholder management frameworks, exploring Agile methodologies, or learning about the intersection of strategy and information systems.",
+          projectsSubtitle: "A selection of system designs, business solutions, and process-driven apps I've built.",
+          contactSub: "Whether it's BA internships, systems analysis collaborations, or just a chat about business processes — my inbox is always open.",
+          label: 'BA Mode',
+        }
+      };
+
+      const dsSkillsHTML = `
+        <div class="skill-icon" data-end="ds" data-tooltip="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></div>
+        <div class="skill-icon" data-end="ds" data-tooltip="Pandas"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas"></div>
+        <div class="skill-icon" data-end="ds" data-tooltip="NumPy"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="NumPy"></div>
+        <div class="skill-icon" data-end="ds" data-tooltip="Scikit-learn"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn"></div>
+        <div class="skill-icon" data-end="ds" data-tooltip="Matplotlib"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib"></div>
+        <div class="skill-icon" data-end="ds" data-tooltip="Jupyter"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" alt="Jupyter"></div>
+        <div class="skill-icon" data-end="ai" data-tooltip="Hugging Face"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face"></div>
+        <div class="skill-icon" data-end="ai" data-tooltip="TensorFlow"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"></div>
+        <div class="skill-icon" data-end="ai" data-tooltip="Ollama"><img src="https://cdn.simpleicons.org/ollama/ffffff" alt="Ollama"></div>
+        <div class="skill-icon" data-end="ai" data-tooltip="Gemini API"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" alt="Gemini API"></div>
+        <div class="skill-icon" data-end="deploy" data-tooltip="FastAPI"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="FastAPI"></div>
+        <div class="skill-icon" data-end="deploy" data-tooltip="Streamlit"><img src="https://cdn.simpleicons.org/streamlit/FF4B4B" alt="Streamlit"></div>
+        <div class="skill-icon" data-end="deploy" data-tooltip="Docker"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"></div>
+        <div class="skill-icon" data-end="deploy" data-tooltip="Git"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"></div>
+        <div class="skill-icon" data-end="deploy" data-tooltip="GitHub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" style="filter:invert(1)"></div>
+        <div class="skill-icon" data-end="deploy" data-tooltip="Vercel"><img src="https://cdn.simpleicons.org/vercel/ffffff" alt="Vercel"></div>
+        <div class="skill-icon" data-end="deploy" data-tooltip="Railway"><img src="https://cdn.simpleicons.org/railway/ffffff" alt="Railway"></div>
+        <div class="skill-icon" data-end="deploy" data-tooltip="Cloudflare"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg" alt="Cloudflare"></div>
+        <div class="skill-icon" data-end="db" data-tooltip="MySQL"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL"></div>
+        <div class="skill-icon" data-end="db" data-tooltip="SQLite"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="SQLite"></div>
+        <div class="skill-icon" data-end="db" data-tooltip="Django"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" alt="Django" style="filter:invert(1)"></div>
+        <div class="skill-icon" data-end="db" data-tooltip="Spring Boot"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring Boot"></div>
+        <div class="skill-icon" data-end="db" data-tooltip="React"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React"></div>
+        <div class="skill-icon" data-end="db" data-tooltip="TypeScript"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript"></div>`;
+
+      const baSkillsHTML = `
+        <div class="skill-icon" data-end="req" data-tooltip="MS Word"><img src="https://img.icons8.com/color/96/microsoft-word-2019.png" alt="MS Word"></div>
+        <div class="skill-icon" data-end="req" data-tooltip="MS Excel"><img src="https://img.icons8.com/color/96/microsoft-excel-2019.png" alt="MS Excel"></div>
+        <div class="skill-icon" data-end="req" data-tooltip="PowerPoint"><img src="https://img.icons8.com/color/96/microsoft-powerpoint-2019.png" alt="PowerPoint"></div>
+        <div class="skill-icon" data-end="req" data-tooltip="ClickUp"><img src="https://cdn.simpleicons.org/clickup/7B68EE" alt="ClickUp"></div>
+        <div class="skill-icon" data-end="process" data-tooltip="BPMN (draw.io)"><img src="https://www.google.com/s2/favicons?domain=bpmn.io&sz=256" alt="BPMN"></div>
+        <div class="skill-icon" data-end="process" data-tooltip="UML (MS Visio)"><img src="https://www.google.com/s2/favicons?domain=uml.org&sz=256" alt="UML"></div>
+        <div class="skill-icon" data-end="process" data-tooltip="Lucidchart (Flowcharts)"><img src="https://cdn.simpleicons.org/lucidchart/F96A00" alt="Lucidchart" onerror="this.src='https://www.google.com/s2/favicons?domain=lucidchart.com&sz=256'"></div>
+        <div class="skill-icon" data-end="process" data-tooltip="draw.io (BPMN & UML)"><img src="https://cdn.simpleicons.org/diagramsdotnet/F08705" alt="draw.io"></div>
+        <div class="skill-icon" data-end="process" data-tooltip="MS Visio (UML diagrams)"><img src="https://img.icons8.com/color/96/microsoft-visio-2019.png" alt="MS Visio"></div>
+        <div class="skill-icon" data-end="data" data-tooltip="SQL"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="SQL"></div>
+        <div class="skill-icon" data-end="data" data-tooltip="Power BI"><img src="https://img.icons8.com/color/96/power-bi.png" alt="Power BI"></div>
+        <div class="skill-icon" data-end="data" data-tooltip="Tableau"><img src="https://img.icons8.com/color/96/tableau-software.png" alt="Tableau"></div>
+        <div class="skill-icon" data-end="data" data-tooltip="Python"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></div>
+        <div class="skill-icon" data-end="data" data-tooltip="Google Sheets"><img src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets"></div>
+        <div class="skill-icon" data-end="agile" data-tooltip="Scrum (ClickUp)"><img src="https://www.google.com/s2/favicons?domain=scrum.org&sz=256" alt="Scrum"></div>
+        <div class="skill-icon" data-end="agile" data-tooltip="Kanban (ClickUp)"><img src="https://www.google.com/s2/favicons?domain=kanbanize.com&sz=256" alt="Kanban"></div>
+        <div class="skill-icon" data-end="agile" data-tooltip="Notion (Kanban boards)"><img src="https://cdn.simpleicons.org/notion/ffffff" alt="Notion"></div>
+        <div class="skill-icon" data-end="ux" data-tooltip="Figma (Wireframing)"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma"></div>
+        <div class="skill-icon" data-end="ux" data-tooltip="Wireframing (Figma)"><img src="https://www.google.com/s2/favicons?domain=balsamiq.com&sz=256" alt="Wireframing"></div>`;
+
+      const dsFiltersHTML = `
+        <button class="skill-filter-btn" data-cat="ds">◈ Data Science</button>
+        <button class="skill-filter-btn" data-cat="ai">⬡ AI &amp; NLP</button>
+        <button class="skill-filter-btn" data-cat="deploy">▲ Deployment</button>
+        <button class="skill-filter-btn" data-cat="db">⬢ Databases</button>
+        <button class="skill-refresh-btn" title="Scatter / Reset">↻</button>`;
+
+      const baFiltersHTML = `
+        <button class="skill-filter-btn" data-cat="req">◈ Docs</button>
+        <button class="skill-filter-btn" data-cat="process">⬡ Process</button>
+        <button class="skill-filter-btn" data-cat="data">▲ Data</button>
+        <button class="skill-filter-btn" data-cat="agile">⬢ Agile</button>
+        <button class="skill-filter-btn" data-cat="ux">◇ UX</button>
+        <button class="skill-refresh-btn" title="Scatter / Reset">↻</button>`;
+
+      function applyMode(mode) {
+        const c = content[mode];
+        document.title = c.title;
+        const el = id => document.getElementById(id);
+        el('heroTagline').textContent      = c.tagline;
+        el('aboutHeading').innerHTML       = c.aboutHeading;
+        el('aboutP1').textContent          = c.aboutP1;
+        el('aboutP2').textContent          = c.aboutP2;
+        el('projectsSubtitle').textContent = c.projectsSubtitle;
+        el('contactSub').textContent       = c.contactSub;
+        // Swap skills section
+        const container   = document.querySelector('.skill-icon-container');
+        const filterInner = document.querySelector('.skills-filter-inner');
+        if (container && filterInner) {
+          container.innerHTML   = mode === 'ds' ? dsSkillsHTML : baSkillsHTML;
+          filterInner.innerHTML = mode === 'ds' ? dsFiltersHTML : baFiltersHTML;
+          if (typeof window.initSkillsScatter === 'function') window.initSkillsScatter();
+        }
+        const btn = document.getElementById('modeToggle');
+        btn.dataset.mode  = mode;
+        btn.dataset.label = c.label;
+        const badge = document.getElementById('modeBadge');
+        if (badge) {
+          badge.textContent = mode.toUpperCase();
+          if (mode === 'ba') {
+            badge.style.background = 'rgba(6,182,212,0.2)';
+            badge.style.color = 'var(--accent2)';
+            badge.style.setProperty('-webkit-text-fill-color', 'var(--accent2)');
+          } else {
+            badge.style.background = 'rgba(124,58,237,0.2)';
+            badge.style.color = 'var(--accent1)';
+            badge.style.setProperty('-webkit-text-fill-color', 'var(--accent1)');
+          }
+        }
+        // Swap projects section
+        if (mode === 'ba') {
+          if (typeof loadBAProjects === 'function') loadBAProjects();
+        } else {
+          if (typeof restoreDSProjects === 'function') restoreDSProjects();
+        }
+        localStorage.setItem('rp-mode', mode);
+      }
+
+      const btn   = document.getElementById('modeToggle');
+      const saved = localStorage.getItem('rp-mode');
+      if (saved === 'ba') { applyMode('ba'); } else { applyMode('ds'); }
+
+      btn.addEventListener('click', () => {
+        const next = btn.dataset.mode === 'ds' ? 'ba' : 'ds';
+        const html = document.documentElement;
+        html.classList.add('mode-swapping');
+        setTimeout(() => {
+          applyMode(next);
+          html.classList.remove('mode-swapping');
+        }, 200);
+      });
+    })();
 
     // ── Light / Dark mode toggle ───────────────────────────
     (function() {

@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "icon": "📊",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "image": "/projects/ba-churn-dashboard.svg",
+    "title": "Customer Churn Analytics Dashboard",
+    "description": "Interactive Power BI dashboard analysing customer churn patterns across 7,043 telecom records. Tracks churn rate, retention, average tenure, and monthly charges — with dynamic slicers for contract type, internet service, payment method, and gender.",
+    "categories": ["analytics"],
+    "github": "",
+    "demo": "https://lnkd.in/p/gX__uxBy"
+  },
+  {
+    "id": 2,
+    "icon": "🎬",
+    "iconBg": "rgba(220,38,38,0.15)",
+    "image": "/projects/ba-netflix-dashboard.svg",
+    "title": "Netflix Content Analytics Dashboard",
+    "description": "Power BI dashboard exploring 7,791 Netflix titles across 683 countries. Visualises content distribution by rating, genre, and director — with a world map of titles by country, Movies vs TV Shows breakdown, and dynamic slicers for year, country, rating, and category.",
+    "categories": ["analytics"],
+    "github": "",
+    "demo": "https://lnkd.in/p/gfwvjNSH"
+  },
+  {
+    "id": 3,
+    "icon": "📋",
+    "iconBg": "rgba(124,58,237,0.15)",
+    "image": "/projects/ba-debitcard-report.svg",
+    "title": "Debit Card Renewal Management System — Project Report",
+    "description": "Comprehensive project report for a web-based debit card renewal platform, enriched with Business Analyst value additions. Covers requirements elicitation, stakeholder analysis, system workflows, and business justification for a PHP MVC-based card issuance system built as a university group project.",
+    "categories": ["docs", "dev"],
+    "github": "",
+    "demo": "https://drive.google.com/file/d/15irmQMtW1MBdBvH8DtlaWCYimhhd69Ie/view?usp=sharing"
+  },
+  {
+    "id": 4,
+    "icon": "🏨",
+    "iconBg": "rgba(245,158,11,0.15)",
+    "image": "/projects/ba-bookinn-report.svg",
+    "title": "BookInn — ICT Project Report",
+    "description": "Full project report for BookInn, a hotel booking and room management platform. Documents the system from an ICT and business perspective — covering project scope, functional requirements, system design, and operational workflows for a full-stack booking solution deployed on Vercel.",
+    "categories": ["docs", "dev"],
+    "github": "",
+    "demo": "https://drive.google.com/file/d/1mIAw1nPqEd3FREi43mmDeEfAPG-xS8RU/view?usp=sharing"
+  },
+  {
+    "id": 5,
+    "icon": "🤖",
+    "iconBg": "rgba(6,182,212,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_08 PM (3).png",
+    "title": "Customer Churn Predictor",
+    "description": "The ML engine behind the churn analytics work — an end-to-end prediction model built on telecom data. Engineered features, benchmarked classifiers (Logistic Regression, Random Forest, XGBoost), and surfaced key churn drivers via SHAP explainability to support data-driven retention decisions.",
+    "categories": ["analytics", "dev"],
+    "github": "https://github.com/Ruvinology/Customer_churn_predictor",
+    "demo": "https://customerchurnpredictor-dzfvdvygnkscn7qbmij3xa.streamlit.app/"
+  },
+  {
+    "id": 6,
+    "icon": "🏨",
+    "iconBg": "rgba(16,185,129,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_13 PM (14).png",
+    "title": "BookInn — Live System",
+    "description": "The working implementation of the BookInn project report — a full-stack hotel booking platform with an admin dashboard for managing rooms, guest reservations, and booking status. Built with React, Node.js, and MongoDB, deployed live on Vercel.",
+    "categories": ["dev"],
+    "github": "https://github.com/Ruvinology/BookInn",
+    "demo": "https://book-inn-two.vercel.app"
+  },
+  {
+    "id": 7,
+    "icon": "💳",
+    "iconBg": "rgba(124,58,237,0.15)",
+    "image": "/projects/ChatGPT Image Aug 25, 2026, 06_18_09 PM (6).png",
+    "title": "Debit Card Online Issuer — Live System",
+    "description": "The working implementation of the debit card project report — a web-based debit card issuance platform built with a custom PHP MVC architecture. Handles card application workflows, user management, and database-driven record tracking. Deployed and live.",
+    "categories": ["dev"],
+    "github": "https://github.com/Department-of-IT-FMSC-USJ/group-project-group-8",
+    "demo": "https://debitcardrenewal.infinityfree.me/"
+  }
+]

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0000"/>
+      <stop offset="100%" style="stop-color:#0d0d0d"/>
+    </linearGradient>
+    <linearGradient id="redgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#dc2626"/>
+      <stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="none" stroke="#dc2626" stroke-width="1" opacity="0.2"/>
+
+  <!-- Grid -->
+  <line x1="0" y1="100" x2="800" y2="100" stroke="#1c1c1c" stroke-width="1"/>
+  <line x1="0" y1="200" x2="800" y2="200" stroke="#1c1c1c" stroke-width="1"/>
+  <line x1="0" y1="300" x2="800" y2="300" stroke="#1c1c1c" stroke-width="1"/>
+  <line x1="0" y1="400" x2="800" y2="400" stroke="#1c1c1c" stroke-width="1"/>
+
+  <!-- Header -->
+  <rect width="800" height="60" fill="#1a0505"/>
+  <rect width="800" height="3" y="60" fill="url(#redgrad)"/>
+
+  <!-- Netflix N icon -->
+  <rect x="25" y="12" width="32" height="38" rx="3" fill="#dc2626"/>
+  <text x="41" y="37" font-family="Arial,sans-serif" font-size="22" font-weight="900" fill="white" text-anchor="middle">N</text>
+
+  <text x="70" y="34" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#e2e8f0">Netflix Content Analytics Dashboard</text>
+  <text x="70" y="52" font-family="Arial,sans-serif" font-size="11" fill="#6b7280">Power BI · 2021 · 7,791 Titles across 683 Countries</text>
+
+  <!-- KPI Cards -->
+  <rect x="30" y="80" width="170" height="78" rx="8" fill="#1c0505" stroke="#dc2626" stroke-width="1" opacity="0.8"/>
+  <text x="115" y="116" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#ef4444" text-anchor="middle">7,791</text>
+  <text x="115" y="143" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Total Titles</text>
+
+  <rect x="215" y="80" width="170" height="78" rx="8" fill="#1c0505" stroke="#f97316" stroke-width="1" opacity="0.8"/>
+  <text x="300" y="116" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#f97316" text-anchor="middle">5,379</text>
+  <text x="300" y="143" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Total Movies</text>
+
+  <rect x="400" y="80" width="170" height="78" rx="8" fill="#1c0505" stroke="#a78bfa" stroke-width="1" opacity="0.8"/>
+  <text x="485" y="116" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#a78bfa" text-anchor="middle">2,410</text>
+  <text x="485" y="143" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">TV Shows</text>
+
+  <rect x="585" y="80" width="185" height="78" rx="8" fill="#1c0505" stroke="#fbbf24" stroke-width="1" opacity="0.8"/>
+  <text x="678" y="116" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#fbbf24" text-anchor="middle">683</text>
+  <text x="678" y="143" font-family="Arial,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Countries</text>
+
+  <!-- Donut chart: Movies vs TV Shows -->
+  <rect x="30" y="175" width="230" height="200" rx="8" fill="#110303" stroke="#2c1515" stroke-width="1"/>
+  <text x="145" y="198" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#9ca3af" text-anchor="middle">Movies vs TV Shows</text>
+  <!-- Donut -->
+  <circle cx="145" cy="295" r="65" fill="none" stroke="#dc2626" stroke-width="28" stroke-dasharray="289 116" stroke-dashoffset="0" opacity="0.9"/>
+  <circle cx="145" cy="295" r="65" fill="none" stroke="#6b21a8" stroke-width="28" stroke-dasharray="116 289" stroke-dashoffset="-289" opacity="0.7"/>
+  <circle cx="145" cy="295" r="37" fill="#110303"/>
+  <text x="145" y="291" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#e2e8f0" text-anchor="middle">69%</text>
+  <text x="145" y="305" font-family="Arial,sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">Movies</text>
+  <!-- Legend -->
+  <rect x="55" y="352" width="10" height="10" rx="2" fill="#dc2626"/>
+  <text x="70" y="361" font-family="Arial,sans-serif" font-size="10" fill="#9ca3af">Movies (69%)</text>
+  <rect x="150" y="352" width="10" height="10" rx="2" fill="#6b21a8"/>
+  <text x="165" y="361" font-family="Arial,sans-serif" font-size="10" fill="#9ca3af">TV Shows (31%)</text>
+
+  <!-- Titles by Rating bar chart -->
+  <rect x="275" y="175" width="505" height="200" rx="8" fill="#110303" stroke="#2c1515" stroke-width="1"/>
+  <text x="295" y="198" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#9ca3af">Titles by Rating</text>
+  <!-- Bars -->
+  <rect x="305" y="235" width="45" height="120" rx="3" fill="#dc2626" opacity="0.9"/>
+  <text x="327" y="231" font-family="Arial,sans-serif" font-size="9" fill="#ef4444" text-anchor="middle">2.9K</text>
+  <text x="327" y="368" font-family="Arial,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">TV-MA</text>
+
+  <rect x="365" y="252" width="45" height="103" rx="3" fill="#b91c1c" opacity="0.85"/>
+  <text x="387" y="248" font-family="Arial,sans-serif" font-size="9" fill="#ef4444" text-anchor="middle">1.9K</text>
+  <text x="387" y="368" font-family="Arial,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">TV-14</text>
+
+  <rect x="425" y="290" width="45" height="65" rx="3" fill="#991b1b" opacity="0.8"/>
+  <text x="447" y="286" font-family="Arial,sans-serif" font-size="9" fill="#ef4444" text-anchor="middle">0.8K</text>
+  <text x="447" y="368" font-family="Arial,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">TV-PG</text>
+
+  <rect x="485" y="305" width="45" height="50" rx="3" fill="#7f1d1d" opacity="0.75"/>
+  <text x="507" y="301" font-family="Arial,sans-serif" font-size="9" fill="#fca5a5" text-anchor="middle">0.4K</text>
+  <text x="507" y="368" font-family="Arial,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">R</text>
+
+  <rect x="545" y="318" width="45" height="37" rx="3" fill="#7f1d1d" opacity="0.7"/>
+  <text x="567" y="314" font-family="Arial,sans-serif" font-size="9" fill="#fca5a5" text-anchor="middle">0.3K</text>
+  <text x="567" y="368" font-family="Arial,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">PG-13</text>
+
+  <rect x="605" y="326" width="45" height="29" rx="3" fill="#7f1d1d" opacity="0.65"/>
+  <text x="627" y="322" font-family="Arial,sans-serif" font-size="9" fill="#fca5a5" text-anchor="middle">0.2K</text>
+  <text x="627" y="368" font-family="Arial,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">TV-Y</text>
+
+  <rect x="665" y="336" width="45" height="19" rx="3" fill="#450a0a" opacity="0.8"/>
+  <text x="687" y="332" font-family="Arial,sans-serif" font-size="9" fill="#fca5a5" text-anchor="middle">0.1K</text>
+  <text x="687" y="368" font-family="Arial,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">PG</text>
+  <!-- X axis -->
+  <line x1="295" y1="355" x2="730" y2="355" stroke="#2c1515" stroke-width="1"/>
+
+  <!-- Top genres -->
+  <rect x="30" y="390" width="740" height="85" rx="8" fill="#110303" stroke="#2c1515" stroke-width="1"/>
+  <text x="50" y="412" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#9ca3af">Top Content Genres</text>
+  <rect x="50" y="420" width="220" height="12" rx="3" fill="#dc2626" opacity="0.85"/>
+  <text x="280" y="431" font-family="Arial,sans-serif" font-size="10" fill="#9ca3af">Documentaries</text>
+  <rect x="50" y="438" width="200" height="12" rx="3" fill="#b91c1c" opacity="0.8"/>
+  <text x="260" y="449" font-family="Arial,sans-serif" font-size="10" fill="#9ca3af">Stand-Up Comedy</text>
+  <rect x="50" y="456" width="175" height="12" rx="3" fill="#991b1b" opacity="0.75"/>
+  <text x="235" y="467" font-family="Arial,sans-serif" font-size="10" fill="#9ca3af">Dramas, International</text>
+
+  <rect x="420" y="420" width="170" height="12" rx="3" fill="#dc2626" opacity="0.8"/>
+  <text x="600" y="431" font-family="Arial,sans-serif" font-size="10" fill="#9ca3af">Kids' TV</text>
+  <rect x="420" y="438" width="145" height="12" rx="3" fill="#b91c1c" opacity="0.75"/>
+  <text x="575" y="449" font-family="Arial,sans-serif" font-size="10" fill="#9ca3af">Children &amp; Family</text>
+  <rect x="420" y="456" width="120" height="12" rx="3" fill="#991b1b" opacity="0.7"/>
+  <text x="550" y="467" font-family="Arial,sans-serif" font-size="10" fill="#9ca3af">Comedies, Intl.</text>
+</svg>
